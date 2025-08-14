@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Projects — Sharp Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script type="module" src="js/animations.js" defer></script>
+  <script type="module" src="js/projects-scene.js" defer></script>
+  
+  <!-- Navigation script -->
+  <script src="js/navigation.js" defer></script>
+</head>
+<body>
+  <!-- reuse header nav -->
+  <header class="site-header" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+      <a class="logo-link" href="index.html">
+        <img src="Images/MainLogo.png" alt="Sharp Solutions logo" class="logo-img" />
+      </a>
+      
+      <!-- Burger menu button for mobile -->
+      <button class="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+      
+      <ul class="nav-links" id="nav-menu" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html" class="nav-link">Home</a></li>
+        <li role="none"><a role="menuitem" href="projects.html" class="nav-link is-active">Projects</a></li>
+        <li role="none"><a role="menuitem" href="services.html" class="nav-link">Services</a></li>
+        <li role="none"><a role="menuitem" href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-social" role="none">
+          <div class="nav-social-row" aria-label="Social links">
+            <a aria-label="Instagram" href="https://instagram.com" target="_blank" class="nav-social-icon"><img src="Images/Instagram.png" alt="Instagram"/></a>
+            <a aria-label="X" href="https://twitter.com" target="_blank" class="nav-social-icon"><img src="Images/TwitterX.png" alt="X"/></a>
+            <a aria-label="WhatsApp" href="https://wa.me" target="_blank" class="nav-social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 12.1a8.4 8.4 0 1 1-16.4 3.3L3 21l5.7-1a8.4 8.4 0 0 0 11.8-7.9Z" stroke="#25D366" stroke-width="1.2"/><path d="M9.5 8.5c.2-.4.4-.5.8-.5.4 0 .6 0 1 .7.4.6.7 1.2.8 1.3.1.1.1.3 0 .4 0 .1-.2.5-.5.7-.3.3-.6.5-.3 1 .3.5 1.2 2 2.7 2.7 1.3.6 1.6.4 2-.1.4-.5.9-1.1 1.1-1 .2 0 .3 0 .5 0 .2 0 .4 0 .6.2.2.2.6.6.6 1.1 0 .5-.4 1.1-1 1.7-.6.6-1.8 1-3 1-1.2 0-2.9-.6-4.2-1.5-1.2-.8-2.7-2.4-3.2-3.3-.5-.9-1-2.3-1-3.1 0-.8.3-1.4.6-1.7Z" fill="#25D366"/></svg>
+            </a>
+            <a aria-label="Facebook" href="https://facebook.com" target="_blank" class="nav-social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.4 3.3-3.4.9 0 1.9.2 1.9.2v2h-1.1c-1 0-1.3.7-1.3 1.4V12h2.3l-.4 2.9h-1.9v7A10 10 0 0 0 22 12Z" fill="#1877F2"/></svg>
+            </a>
+          </div>
+          <div class="nav-particles" aria-hidden="true"></div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+ <!-- ...existing code... -->
+<main class="projects-main">
+  <div class="hero-glow-bg">
+    <div class="glow-orb orb-a"></div>
+    <div class="glow-orb orb-b"></div>
+    <div class="glow-orb orb-c"></div>
+  </div>
+  <h1 class="projects-heading gradient-text">Projects</h1>
+
+  <div class="projects-grid">
+    <section class="project-card" id="villanova">
+      <div class="project-media">
+        <div class="proj-canvas-wrap" data-project="villanova">
+          <canvas class="mini-canvas" id="mini-villanova" aria-hidden="true"></canvas>
+        </div>
+        <span class="project-badge">Live</span>
+      </div>
+      <div class="project-body">
+        <h2 class="project-title">villanovaband.co.uk</h2>
+        <p class="project-desc">Artwork, embedded audio, press kit — reflecting the band's grit and polish.</p>
+        <ul class="project-tags">
+          <li>Static</li><li>Media</li><li>Perf</li>
+        </ul>
+        <a class="proj-visit" href="https://villanovaband.co.uk/" target="_blank" rel="noopener">Visit site →</a>
+      </div>
+    </section>
+
+    <section class="project-card" id="reyton">
+      <div class="project-media">
+        <div class="proj-canvas-wrap" data-project="reyton">
+          <canvas class="mini-canvas" id="mini-reyton" aria-hidden="true"></canvas>
+        </div>
+        <span class="project-badge alt">Form</span>
+      </div>
+      <div class="project-body">
+        <h2 class="project-title">reytonwirereturns.com</h2>
+        <p class="project-desc">Return declaration workflow — simple, secure & fast.</p>
+        <ul class="project-tags">
+          <li>Accessibility</li><li>UX</li><li>Secure</li>
+        </ul>
+        <a class="proj-visit" href="https://reytonwirereturns.com/" target="_blank" rel="noopener">Visit site →</a>
+      </div>
+    </section>
+
+    <section class="project-card" id="wishy">
+      <div class="project-media">
+        <div class="proj-canvas-wrap" data-project="wishy">
+          <canvas class="mini-canvas" id="mini-wishy" aria-hidden="true"></canvas>
+        </div>
+        <span class="project-badge">Booking</span>
+      </div>
+      <div class="project-body">
+        <h2 class="project-title">wishywashychester.com</h2>
+        <p class="project-desc">Lean booking flow with date picker for a local service brand.</p>
+        <ul class="project-tags">
+          <li>Forms</li><li>Local</li><li>Speed</li>
+        </ul>
+        <a class="proj-visit" href="https://wishywashychester.com/" target="_blank" rel="noopener">Visit site →</a>
+      </div>
+    </section>
+  </div>
+</main>
+<!-- ...existing code... -->
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <h3 class="footer-logo">Sharp<span class="accent-frag">Solutions</span></h3>
+      <p class="footer-tagline">Static, ultra‑fast, maintenance‑light builds.</p>
+      <p class="footer-copy">© <span id="year"></span> Sharp Solutions</p>
+    </div>
+
+    <nav class="footer-col footer-nav" aria-label="Footer navigation">
+      <ul class="footer-links">
+        <li><a class="footer-link-btn" href="index.html">Home</a></li>
+        <li><a class="footer-link-btn" href="projects.html">Projects</a></li>
+        <li><a class="footer-link-btn" href="services.html">Services</a></li>
+        <li><a class="footer-link-btn" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col footer-contact">
+      <h4 class="footer-heading">Get in touch</h4>
+      <a class="footer-link-inline" href="mailto:hello@sharpsolutions.dev">hello@sharpsolutions.dev</a>
+      <div class="social-row">
+        <a aria-label="GitHub" href="https://github.com/yourprofile" class="social-icon">GH</a>
+        <a aria-label="LinkedIn" href="https://linkedin.com/in/yourprofile" class="social-icon">IN</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

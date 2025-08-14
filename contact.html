@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact — Sharp Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script type="module" src="js/animations.js" defer></script>
+  <script type="module" src="js/contact-scene.js" defer></script>
+  
+  <!-- Navigation script -->
+  <script src="js/navigation.js" defer></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+      <a class="logo-link" href="index.html">
+        <img src="Images/MainLogo.png" alt="Sharp Solutions logo" class="logo-img" />
+      </a>
+      
+      <!-- Burger menu button for mobile -->
+      <button class="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+      
+      <ul class="nav-links" id="nav-menu" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html" class="nav-link">Home</a></li>
+        <li role="none"><a role="menuitem" href="projects.html" class="nav-link">Projects</a></li>
+        <li role="none"><a role="menuitem" href="services.html" class="nav-link">Services</a></li>
+        <li role="none"><a role="menuitem" href="contact.html" class="nav-link is-active">Contact</a></li>
+        <li class="nav-social" role="none">
+          <div class="nav-social-row" aria-label="Social links">
+            <a aria-label="Instagram" href="https://instagram.com" target="_blank" class="nav-social-icon"><img src="Images/Instagram.png" alt="Instagram"/></a>
+            <a aria-label="X" href="https://twitter.com" target="_blank" class="nav-social-icon"><img src="Images/TwitterX.png" alt="X"/></a>
+            <a aria-label="WhatsApp" href="https://wa.me" target="_blank" class="nav-social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 12.1a8.4 8.4 0 1 1-16.4 3.3L3 21l5.7-1a8.4 8.4 0 0 0 11.8-7.9Z" stroke="#25D366" stroke-width="1.2"/><path d="M9.5 8.5c.2-.4.4-.5.8-.5.4 0 .6 0 1 .7.4.6.7 1.2.8 1.3.1.1.1.3 0 .4 0 .1-.2.5-.5.7-.3.3-.6.5-.3 1 .3.5 1.2 2 2.7 2.7 1.3.6 1.6.4 2-.1.4-.5.9-1.1 1.1-1 .2 0 .3 0 .5 0 .2 0 .4 0 .6.2.2.2.6.6.6 1.1 0 .5-.4 1.1-1 1.7-.6.6-1.8 1-3 1-1.2 0-2.9-.6-4.2-1.5-1.2-.8-2.7-2.4-3.2-3.3-.5-.9-1-2.3-1-3.1 0-.8.3-1.4.6-1.7Z" fill="#25D366"/></svg>
+            </a>
+            <a aria-label="Facebook" href="https://facebook.com" target="_blank" class="nav-social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.4 3.3-3.4.9 0 1.9.2 1.9.2v2h-1.1c-1 0-1.3.7-1.3 1.4V12h2.3l-.4 2.9h-1.9v7A10 10 0 0 0 22 12Z" fill="#1877F2"/></svg>
+            </a>
+          </div>
+          <div class="nav-particles" aria-hidden="true"></div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 3D Background Canvas -->
+  <canvas id="contactCanvas" class="bg-scene" aria-hidden="true"></canvas>
+
+  <main class="contact-main">
+    <!-- Hero Section -->
+    <section class="contact-hero-section">
+      <div class="hero-glow-bg">
+        <div class="glow-orb orb-a"></div>
+        <div class="glow-orb orb-b"></div>
+        <div class="glow-orb orb-c"></div>
+      </div>
+      <div class="contact-hero-content card-elevate">
+        <h1 class="contact-hero-title gradient-text">Get In Touch</h1>
+        <p class="contact-hero-sub">Ready to start your project? Let's discuss how we can bring your vision to life with our professional web solutions.</p>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+      <div class="contact-form-container card-elevate">
+        <h2 class="contact-form-title">Send Us a Message</h2>
+        <p class="contact-form-subtitle">Tell us about your project — we reply fast.</p>
+
+        <form action="https://formsubmit.co/f66c1de294603359e9cb2eed7b99d1bf" method="POST" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project, goals, and timeline..."></textarea>
+          </div>
+
+          <input type="hidden" name="_next" value="https://sharpsolutions.store/thankyou.html">
+          <button type="submit" class="contact-submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media-section">
+      <div class="social-content card-elevate">
+        <h2 class="social-title">Connect With Us</h2>
+        <p class="social-subtitle">Follow us on social media for updates, tips, and inspiration</p>
+        
+        <div class="social-grid">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-card instagram-card">
+            <div class="social-icon-container">
+              <img src="Images/Instagram.png" alt="Instagram" class="social-icon-img" />
+            </div>
+            <h3>Instagram</h3>
+            <p>Follow our latest projects and behind-the-scenes content</p>
+          </a>
+          
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-card twitter-card">
+            <div class="social-icon-container">
+              <img src="Images/TwitterX.png" alt="Twitter/X" class="social-icon-img" />
+            </div>
+            <h3>Twitter/X</h3>
+            <p>Get real-time updates and industry insights</p>
+          </a>
+
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-card facebook-card">
+            <div class="social-icon-container">
+              <img src="Images/Facebook.png" alt="Twitter/X" class="social-icon-img" />
+            </div>
+            <h3>Facebook</h3>
+            <p>Like our page and stay connected</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Contact Info -->
+    <section class="contact-info-section">
+      <div class="contact-info-container card-elevate">
+        <h2 class="contact-info-title">Other Ways to Reach Us</h2>
+        
+        <div class="contact-info-grid">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📧</div>
+            <h3>Email</h3>
+            <p>hello@sharpsolutions.dev</p>
+            <a href="mailto:hello@sharpsolutions.dev" class="contact-link">Send Email</a>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <img src="Images/whatsapp.png" alt="WhatsApp" class="social-icon-img" onerror="this.src='Images/WhatsApp.png'" />
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Quick questions? Chat with us directly</p>
+            <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="contact-link">Chat on WhatsApp</a>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🐙</div>
+            <h3>GitHub</h3>
+            <p>View our open source work</p>
+            <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" class="contact-link">View Profile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <h3 class="footer-logo">Sharp<span class="accent-frag">Solutions</span></h3>
+      <p class="footer-tagline">Static, ultra‑fast, maintenance‑light builds.</p>
+      <p class="footer-copy">© <span id="year"></span> Sharp Solutions</p>
+    </div>
+
+    <nav class="footer-col footer-nav" aria-label="Footer navigation">
+      <ul class="footer-links">
+        <li><a class="footer-link-btn" href="index.html">Home</a></li>
+        <li><a class="footer-link-btn" href="projects.html">Projects</a></li>
+        <li><a class="footer-link-btn" href="services.html">Services</a></li>
+        <li><a class="footer-link-btn" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col footer-contact">
+      <h4 class="footer-heading">Get in touch</h4>
+      <a class="footer-link-inline" href="mailto:hello@sharpsolutions.dev">hello@sharpsolutions.dev</a>
+      <div class="social-row">
+        <a aria-label="GitHub" href="https://github.com/yourprofile" class="social-icon">GH</a>
+        <a aria-label="LinkedIn" href="https://linkedin.com/in/yourprofile" class="social-icon">IN</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,346 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sharp Solutions — Custom static websites</title>
+
+  <!-- CSS/JS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="/Images/favicon.ico.png">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script type="module" src="js/animations.js" defer></script>
+
+  <!-- three.js (module-based) + hero scene -->
+    <script type="module" src="js/hero-scene.js" defer></script>
+    <script type="module" src="js/info-panels-scene.js" defer></script>
+    
+    
+    <!-- Navigation script -->
+    <script src="js/navigation.js" defer></script>
+
+</head>
+<body>
+    
+  <header class="site-header" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+      <a class="logo-link" href="index.html">
+        <img src="Images/MainLogo.png" alt="Sharp Solutions logo" class="logo-img" />
+      </a>
+      
+      <!-- Burger menu button for mobile -->
+      <button class="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+      
+      <ul class="nav-links" id="nav-menu" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html" class="nav-link is-active">Home</a></li>
+        <li role="none"><a role="menuitem" href="projects.html" class="nav-link">Projects</a></li>
+        <li role="none"><a role="menuitem" href="services.html" class="nav-link">Services</a></li>
+        <li role="none"><a role="menuitem" href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-social" role="none">
+          <div class="nav-social-row" aria-label="Social links">
+            <a aria-label="Instagram" href="https://instagram.com" target="_blank" class="nav-social-icon"><img src="Images/Instagram.png" alt="Instagram"/></a>
+            <a aria-label="X" href="https://twitter.com" target="_blank" class="nav-social-icon"><img src="Images/TwitterX.png" alt="X"/></a>
+            <a aria-label="WhatsApp" href="https://wa.me" target="_blank" class="nav-social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 12.1a8.4 8.4 0 1 1-16.4 3.3L3 21l5.7-1a8.4 8.4 0 0 0 11.8-7.9Z" stroke="#25D366" stroke-width="1.2"/><path d="M9.5 8.5c.2-.4.4-.5.8-.5.4 0 .6 0 1 .7.4.6.7 1.2.8 1.3.1.1.1.3 0 .4 0 .1-.2.5-.5.7-.3.3-.6.5-.3 1 .3.5 1.2 2 2.7 2.7 1.3.6 1.6.4 2-.1.4-.5.9-1.1 1.1-1 .2 0 .3 0 .5 0 .2 0 .4 0 .6.2.2.2.6.6.6 1.1 0 .5-.4 1.1-1 1.7-.6.6-1.8 1-3 1-1.2 0-2.9-.6-4.2-1.5-1.2-.8-2.7-2.4-3.2-3.3-.5-.9-1-2.3-1-3.1 0-.8.3-1.4.6-1.7Z" fill="#25D366"/></svg>
+            </a>
+            <a aria-label="Facebook" href="https://facebook.com" target="_blank" class="nav-social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.4 3.3-3.4.9 0 1.9.2 1.9.2v2h-1.1c-1 0-1.3.7-1.3 1.4V12h2.3l-.4 2.9h-1.9v7A10 10 0 0 0 22 12Z" fill="#1877F2"/></svg>
+            </a>
+          </div>
+          <div class="nav-particles" aria-hidden="true"></div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- HERO -->
+  <canvas id="heroCanvas" class="bg-scene" aria-hidden="true">
+  </canvas>
+  <!-- ...existing code... -->
+  <section class="hero" aria-label="Intro — Sharp Solutions">
+    <div class="hero-glow-bg">
+      <div class="glow-orb orb-a"></div>
+      <div class="glow-orb orb-b"></div>
+      <div class="glow-orb orb-c"></div>
+    </div>
+    <div class="hero-content card-elevate">
+      <!-- Main Logo -->
+      <div class="hero-logo-container">
+        <img src="Images/MainLogo.png" alt="Sharp Solutions Main Logo" class="hero-logo" />
+      </div>
+      <h1 class="hero-title gradient-text">Custom Websites. Zero Hosting Costs.</h1>
+      <p class="hero-sub">Sharp Solutions builds lightning-fast, secure sites with clean HTML, CSS & JavaScript — hosted on GitHub Pages for near-zero ongoing costs.</p>
+      <div class="hero-cta-row">
+        <a class="cta-button" href="contact.html">Start Your Project</a>
+        <a class="cta-secondary" href="projects.html">See Portfolio</a>
+      </div>
+      <p class="hero-meta">Fast load • Secure • Lightweight</p>
+
+    </div>
+    
+    <div class="scroll-mouse">
+         <div class="scroll-wheel"></div>
+    </div>
+  </section>
+  <!-- ...existing code... -->
+
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <main id="maincontent">
+    <!-- Intro panels (clock + calendar) based on original content -->
+<section class="info-panels" aria-label="Key strengths">
+  <div id="infoPanelsCanvas" class="panels-canvas" aria-hidden="true"></div>
+  <div class="panels-grid">
+    <article class="panel glow-border">
+      <h2>Fast responses</h2>
+      <p>Video consults and rapid email cycles keep projects moving.</p>
+    </article>
+    <article class="panel glow-border">
+      <h2>Design-first process</h2>
+      <p>Figma → iterate → hand‑coded output. No CMS bloat.</p>
+    </article>
+    <article class="panel glow-border">
+      <h2>Performance focus</h2>
+      <p>Lean assets & Core Web Vitals oriented development.</p>
+    </article>
+  </div>
+</section>
+
+    <div class="section-divider angled"></div>
+
+    <!-- Featured Projects Carousel -->
+    <section class="featured-projects" aria-label="Featured Projects">
+      <div class="section-head">
+        <h2 class="gradient-text">Featured Projects</h2>
+        <p class="section-sub">Selected client work. Auto-rotating with hover pause.</p>
+      </div>
+      <div class="carousel" id="projectsCarousel" role="region" aria-roledescription="carousel" aria-label="Featured projects">
+        <button class="carousel-btn prev" aria-label="Previous project" data-dir="-1">‹</button>
+        <div class="carousel-track" role="list">
+          <article class="carousel-slide glow-border" role="listitem">
+            <img src="Images/wishywasy-logo 1.png" alt="WishyWasy brand" class="carousel-media" />
+            <div class="carousel-body">
+              <h3 class="carousel-title">WishyWasy</h3>
+              <p class="carousel-desc">Playful landing page with micro‑interactions and accessible motion.</p>
+              <a class="proj-link" href="projects.html#wishywasy">View project →</a>
+            </div>
+          </article>
+          <article class="carousel-slide glow-border" role="listitem">
+            <img src="Images/villanova-logo 1.png" alt="Villanova Band" class="carousel-media" />
+            <div class="carousel-body">
+              <h3 class="carousel-title">Villanova Band</h3>
+              <p class="carousel-desc">Media‑rich hub with responsive layout and blazing performance.</p>
+              <a class="proj-link" href="projects.html#villanova">View project →</a>
+            </div>
+          </article>
+          <article class="carousel-slide glow-border" role="listitem">
+            <img src="Images/reyton-logo.png" alt="Reyton" class="carousel-media" />
+            <div class="carousel-body">
+              <h3 class="carousel-title">Reyton</h3>
+              <p class="carousel-desc">Elegant brand site with subtle 3D accents and smooth scroll reveals.</p>
+              <a class="proj-link" href="projects.html#reyton">View project →</a>
+            </div>
+          </article>
+        </div>
+        <button class="carousel-btn next" aria-label="Next project" data-dir="1">›</button>
+      </div>
+    </section>
+
+    <div class="section-divider angled"></div>
+
+    <!-- Services with animated icons -->
+    <section class="services-overview-home" aria-label="Services overview">
+      <div class="section-head">
+        <h2 class="gradient-text">Services</h2>
+        <p class="section-sub">Design‑first, performance‑driven builds.</p>
+      </div>
+      <div class="service-grid home-grid">
+        <article class="service-item reveal">
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="#de07d0" stroke-width="1.5"/>
+              <path d="M2 16h20l-4 4H6l-4-4z" fill="#a800a6" opacity=".25"/>
+              <circle cx="7" cy="8" r="1" fill="#de07d0"/>
+              <rect x="9" y="7" width="9" height="2" rx="1" fill="#de07d0" opacity=".8"/>
+            </svg>
+          </div>
+          <h3>Landing Pages</h3>
+          <p>High‑converting, lightweight pages with crisp visuals and analytics.</p>
+        </article>
+        <article class="service-item reveal">
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="8" r="3.5" stroke="#de07d0" stroke-width="1.5"/>
+              <path d="M4 20c1.5-3.5 4.5-6 8-6s6.5 2.5 8 6" stroke="#a800a6" stroke-width="1.5" opacity=".8"/>
+              <path d="M5 5l3-3m11 0l-3 3" stroke="#de07d0" stroke-width="1.2" opacity=".6"/>
+            </svg>
+          </div>
+          <h3>Brand Sites</h3>
+          <p>Multi‑section sites with cohesive visuals, motion, and UX polish.</p>
+        </article>
+        <article class="service-item reveal">
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="3" stroke="#de07d0" stroke-width="1.5"/>
+              <path d="M12 7v6l4 2" stroke="#a800a6" stroke-width="1.5"/>
+              <circle cx="8" cy="10" r="1" fill="#de07d0"/>
+              <circle cx="16" cy="14" r="1" fill="#de07d0"/>
+            </svg>
+          </div>
+          <h3>Interactive UI</h3>
+          <p>Custom JavaScript & Three.js components to make content memorable.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="section-divider angled"></div>
+
+    <!-- Why Choose Me -->
+    <section class="why-choose" aria-label="Why choose Sharp Solutions">
+      <div class="section-head">
+        <h2 class="gradient-text">Why Choose Me</h2>
+        <p class="section-sub">Practical benefits, premium execution.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card glow-border reveal">
+          <h3>Zero Hosting Costs</h3>
+          <p>Sites ship to GitHub Pages or similar static hosting with near‑zero ongoing fees.</p>
+        </article>
+        <article class="why-card glow-border reveal">
+          <h3>Speed & SEO</h3>
+          <p>Clean code, compressed assets, and Core Web Vitals‑oriented builds.</p>
+        </article>
+        <article class="why-card glow-border reveal">
+          <h3>Design‑First</h3>
+          <p>Figma prototyping → iteration → hand‑coded launch for pixel‑perfect results.</p>
+        </article>
+        <article class="why-card glow-border reveal">
+          <h3>Clear Communication</h3>
+          <p>Video calls, fast async updates, and transparent timelines.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="section-divider angled"></div>
+
+    <!-- Testimonials Slider -->
+    <section class="testimonials" aria-label="Client testimonials">
+      <div class="section-head">
+        <h2 class="gradient-text">Testimonials</h2>
+        <p class="section-sub">What clients say.</p>
+      </div>
+      <div class="t-slider" id="testimonialsSlider" role="region" aria-roledescription="carousel" aria-label="Testimonials">
+        <div class="t-track" role="list">
+          <article class="t-card glow-border" role="listitem">
+            <p class="t-quote">“Lightning‑fast delivery and a stunning result. Our bounce rate dropped immediately.”</p>
+            <p class="t-author">— Alex R., Marketing Lead</p>
+          </article>
+          <article class="t-card glow-border" role="listitem">
+            <p class="t-quote">“Great communication, clean code, and thoughtful UX. Highly recommend.”</p>
+            <p class="t-author">— Priya S., Founder</p>
+          </article>
+          <article class="t-card glow-border" role="listitem">
+            <p class="t-quote">“The subtle 3D touches set our brand apart. Performance stayed top‑notch.”</p>
+            <p class="t-author">— Miguel C., Product Manager</p>
+          </article>
+          <article class="t-card glow-border" role="listitem">
+            <p class="t-quote">“From Figma to production without a hitch. The final site feels premium.”</p>
+            <p class="t-author">— Jenna T., Creative Director</p>
+          </article>
+          <article class="t-card glow-border" role="listitem">
+            <p class="t-quote">“Met deadlines, nailed the details, and taught our team along the way.”</p>
+            <p class="t-author">— Omar L., Ops</p>
+          </article>
+          <article class="t-card glow-border" role="listitem">
+            <p class="t-quote">“A noticeable lift in conversions after launch — exactly what we needed.”</p>
+            <p class="t-author">— Sara P., Growth</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills / tech icons (integrates into the scene later) -->
+    <section class="tech-strip" aria-label="Technologies">
+      <div class="tech-head">
+        <h3 class="tech-heading">Languages used</h3>
+        <div class="tap-indicator" aria-hidden="true"><img src="Images/touch-icon.png" alt="Tap icons" class="tap-img" /></div>
+      </div>
+      <div class="tech-inner">
+        <img src="Images/html.png" alt="HTML" class="tech-icon" tabindex="0"
+             data-name="HTML"
+             data-desc="The structure of the web. Defines content, headings, links, forms, and semantic layout." />
+        <img src="Images/css.png" alt="CSS" class="tech-icon" tabindex="0"
+             data-name="CSS"
+             data-desc="Presentation and layout. Controls colors, spacing, typography, and responsive design." />
+        <img src="Images/javascript.png" alt="JavaScript" class="tech-icon" tabindex="0"
+             data-name="JavaScript"
+             data-desc="Interactivity and logic. Powers behaviors, animations, and communication with APIs." />
+        <img src="Images/figma.png" alt="Figma" class="tech-icon" tabindex="0"
+             data-name="Figma"
+             data-desc="Design and prototyping. Plan user interfaces, collaborate, and hand off assets." />
+      </div>
+    </section>
+
+    <!-- Featured project teaser -->
+<!-- ...existing code... -->
+<!-- ...existing code... -->
+    <!-- Featured project + Contact preview (side by side on desktop) -->
+    <div class="featured-row">
+      <section class="featured-project feature-card" aria-label="Featured project">
+        <div class="feature-glow"></div>
+        <h2 class="gradient-text">Featured: Villanova Band</h2>
+        <p class="proj-summary">A fast, responsive media hub with accessible, fan‑friendly layout.</p>
+        <a class="proj-link" href="projects.html#villanova">View case study →</a>
+      </section>
+
+      <section class="featured-project feature-card" aria-label="Contact teaser">
+        <div class="feature-glow"></div>
+        <h2 class="gradient-text">Get In Touch</h2>
+        <p class="proj-summary">Click below to contact us via email.</p>
+        <a class="proj-link" href="contact.html">Contact →</a>
+      </section>
+    </div>
+  </main>
+<!-- ...existing code... -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <h3 class="footer-logo">Sharp<span class="accent-frag">Solutions</span></h3>
+      <p class="footer-tagline">Static, ultra‑fast, maintenance‑light builds.</p>
+      <p class="footer-copy">© <span id="year"></span> Sharp Solutions</p>
+    </div>
+
+    <nav class="footer-col footer-nav" aria-label="Footer navigation">
+      <ul class="footer-links">
+        <li><a class="footer-link-btn" href="index.html">Home</a></li>
+        <li><a class="footer-link-btn" href="projects.html">Projects</a></li>
+        <li><a class="footer-link-btn" href="services.html">Services</a></li>
+        <li><a class="footer-link-btn" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col footer-contact">
+      <h4 class="footer-heading">Get in touch</h4>
+      <a class="footer-link-inline" href="mailto:hello@sharpsolutions.dev">hello@sharpsolutions.dev</a>
+      <div class="social-row">
+        <a aria-label="GitHub" href="https://github.com/yourprofile" class="social-icon">GH</a>
+        <a aria-label="LinkedIn" href="https://linkedin.com/in/yourprofile" class="social-icon">IN</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<!-- ...existing code... -->
+
+  <script>
+    // small UI helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Services — Sharp Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script type="module" src="js/animations.js" defer></script>
+  <script type="module" src="js/services-scene.js" defer></script>
+  
+  <!-- Navigation script -->
+  <script src="js/navigation.js" defer></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+      <a class="logo-link" href="index.html">
+        <img src="Images/MainLogo.png" alt="Sharp Solutions logo" class="logo-img" />
+      </a>
+      
+      <!-- Burger menu button for mobile -->
+      <button class="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+      
+      <ul class="nav-links" id="nav-menu" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html" class="nav-link">Home</a></li>
+        <li role="none"><a role="menuitem" href="projects.html" class="nav-link">Projects</a></li>
+        <li role="none"><a role="menuitem" href="services.html" class="nav-link is-active">Services</a></li>
+        <li role="none"><a role="menuitem" href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-social" role="none">
+          <div class="nav-social-row" aria-label="Social links">
+            <a aria-label="Instagram" href="https://instagram.com" target="_blank" class="nav-social-icon"><img src="Images/Instagram.png" alt="Instagram"/></a>
+            <a aria-label="X" href="https://twitter.com" target="_blank" class="nav-social-icon"><img src="Images/TwitterX.png" alt="X"/></a>
+            <a aria-label="WhatsApp" href="https://wa.me" target="_blank" class="nav-social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 12.1a8.4 8.4 0 1 1-16.4 3.3L3 21l5.7-1a8.4 8.4 0 0 0 11.8-7.9Z" stroke="#25D366" stroke-width="1.2"/><path d="M9.5 8.5c.2-.4.4-.5.8-.5.4 0 .6 0 1 .7.4.6.7 1.2.8 1.3.1.1.1.3 0 .4 0 .1-.2.5-.5.7-.3.3-.6.5-.3 1 .3.5 1.2 2 2.7 2.7 1.3.6 1.6.4 2-.1.4-.5.9-1.1 1.1-1 .2 0 .3 0 .5 0 .2 0 .4 0 .6.2.2.2.6.6.6 1.1 0 .5-.4 1.1-1 1.7-.6.6-1.8 1-3 1-1.2 0-2.9-.6-4.2-1.5-1.2-.8-2.7-2.4-3.2-3.3-.5-.9-1-2.3-1-3.1 0-.8.3-1.4.6-1.7Z" fill="#25D366"/></svg>
+            </a>
+            <a aria-label="Facebook" href="https://facebook.com" target="_blank" class="nav-social-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.4 3.3-3.4.9 0 1.9.2 1.9.2v2h-1.1c-1 0-1.3.7-1.3 1.4V12h2.3l-.4 2.9h-1.9v7A10 10 0 0 0 22 12Z" fill="#1877F2"/></svg>
+            </a>
+          </div>
+          <div class="nav-particles" aria-hidden="true"></div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<main class="services-main">
+  <canvas id="servicesCanvas" class="bg-scene" aria-hidden="true"></canvas>
+  
+  <!-- Hero Section -->
+  <section class="services-hero-section">
+    <div class="hero-glow-bg">
+      <div class="glow-orb orb-a"></div>
+      <div class="glow-orb orb-b"></div>
+      <div class="glow-orb orb-c"></div>
+    </div>
+    <div class="services-hero-content card-elevate">
+      <!-- Main Logo -->
+      <div class="services-logo-container">
+        <img src="Images/MainLogo.png" alt="Sharp Solutions Main Logo" class="services-logo" />
+      </div>
+      <h1 class="services-hero-title gradient-text">Professional Web Solutions</h1>
+      <p class="services-hero-sub">Tiered packages, bespoke builds, and performance-first delivery. Choose the perfect solution for your business needs.</p>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="services-overview">
+    <div class="overview-content">
+      <h2 class="overview-title">Why Choose Sharp Solutions?</h2>
+      <div class="overview-features">
+        <div class="overview-feature">
+          <h3>🚀 Performance First</h3>
+          <p>Lightning-fast static sites that load in milliseconds</p>
+        </div>
+        <div class="overview-feature">
+          <h3>💎 Zero Hosting Costs</h3>
+          <p>Built on GitHub Pages - completely free hosting</p>
+        </div>
+        <div class="overview-feature">
+          <h3>🔧 Maintenance Free</h3>
+          <p>Static sites that work without constant updates</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section class="packages-section">
+    <h2 class="packages-heading">Service Packages</h2>
+    <div class="packages-grid">
+      <article class="package-card reveal-float" style="--delay:0s;">
+        <div class="package-header">
+          <h3>Bronze — Starter</h3>
+          <div class="package-badge">Perfect for small businesses</div>
+        </div>
+        <ul class="package-features">
+          <li>1–3 pages with responsive design</li>
+          <li>Contact form integration</li>
+          <li>GitHub Pages hosting included</li>
+          <li>Basic SEO optimization</li>
+          <li>Mobile-first approach</li>
+        </ul>
+        <div class="package-cta">
+          <a href="contact.html" class="package-button">Get Started</a>
+        </div>
+      </article>
+      
+      <article class="package-card reveal-float featured-package" style="--delay:.12s;">
+        <div class="package-header">
+          <h3>Silver — Business</h3>
+          <div class="package-badge featured">Most Popular</div>
+        </div>
+        <ul class="package-features">
+          <li>4–6 pages with advanced layouts</li>
+          <li>Image gallery and media integration</li>
+          <li>Enhanced SEO and analytics</li>
+          <li>1 month post-launch support</li>
+          <li>Performance optimization</li>
+          <li>Social media integration</li>
+        </ul>
+        <div class="package-cta">
+          <a href="contact.html" class="package-button featured">Choose Silver</a>
+        </div>
+      </article>
+      
+      <article class="package-card reveal-float" style="--delay:.24s;">
+        <div class="package-header">
+          <h3>Gold — Premium</h3>
+          <div class="package-badge">Enterprise grade</div>
+        </div>
+        <ul class="package-features">
+          <li>Full design integration & branding</li>
+          <li>Advanced analytics & reporting</li>
+          <li>3 months maintenance included</li>
+          <li>Priority support & updates</li>
+          <li>Custom functionality development</li>
+          <li>Performance monitoring</li>
+        </ul>
+        <div class="package-cta">
+          <a href="contact.html" class="package-button">Go Premium</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Additional Services -->
+  <section class="additional-services">
+    <div class="additional-content">
+      <h2>Additional Services</h2>
+      <div class="service-grid">
+        <div class="service-item">
+          <h3>🔍 SEO Optimization</h3>
+          <p>Improve your search engine rankings with our proven SEO strategies</p>
+        </div>
+        <div class="service-item">
+          <h3>📱 Mobile Optimization</h3>
+          <p>Ensure your site looks perfect on all devices and screen sizes</p>
+        </div>
+        <div class="service-item">
+          <h3>⚡ Performance Tuning</h3>
+          <p>Optimize loading speeds and user experience for maximum engagement</p>
+        </div>
+        <div class="service-item">
+          <h3>🎨 Custom Design</h3>
+          <p>Unique, branded designs that perfectly represent your business</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <h3 class="footer-logo">Sharp<span class="accent-frag">Solutions</span></h3>
+      <p class="footer-tagline">Static, ultra‑fast, maintenance‑light builds.</p>
+      <p class="footer-copy">© <span id="year"></span> Sharp Solutions</p>
+    </div>
+
+    <nav class="footer-col footer-nav" aria-label="Footer navigation">
+      <ul class="footer-links">
+        <li><a class="footer-link-btn" href="index.html">Home</a></li>
+        <li><a class="footer-link-btn" href="projects.html">Projects</a></li>
+        <li><a class="footer-link-btn" href="services.html">Services</a></li>
+        <li><a class="footer-link-btn" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col footer-contact">
+      <h4 class="footer-heading">Get in touch</h4>
+      <a class="footer-link-inline" href="mailto:hello@sharpsolutions.dev">hello@sharpsolutions.dev</a>
+      <div class="social-row">
+        <a aria-label="GitHub" href="https://github.com/yourprofile" class="social-icon">GH</a>
+        <a aria-label="LinkedIn" href="https://linkedin.com/in/yourprofile" class="social-icon">IN</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
